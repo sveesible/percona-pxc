@@ -12,7 +12,7 @@ ip addr add 10.2.28.183/23 dev em2
 ```
 you might need this too
 ```bash
-echo "net.ipv4.ip_nonlocal_bind = 1" >> /etc/sysctl.conf
+echo "net.ipv4.ip_nonlocal_bind = 1" >> /etc/sysctl.conf && sysctl -p
 ```
 
 
