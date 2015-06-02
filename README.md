@@ -18,7 +18,7 @@ echo "net.ipv4.ip_nonlocal_bind = 1" >> /etc/sysctl.conf && sysctl -p
 
 ### Third run the container with your own environment variables and map the ports to your new public IP
 ```bash
-docker run --name pxc-node1 --privileged=true -e MYSQL_ROOT_PASSWORD=changeMe? -e CLUSTER_IP_ADDRESS=10.2.28.183 -e \
+docker run --name pxc-node1 -e MYSQL_ROOT_PASSWORD=changeMe? -e CLUSTER_IP_ADDRESS=10.2.28.183 -e \
 CLUSTER_NODE_NAME=pxc-cluster1 -e CLUSTER_NODES=10.2.28.184,10.2.28.185 -d -p 10.2.28.183:3306:3306 -p 10.2.28.183:4567:4567 \
 -p 10.2.28.183:4568:4568 -p 10.2.28.183:4444:4444 pxc-sample1 bootstrap
 ```
